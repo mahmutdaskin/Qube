@@ -1,3 +1,10 @@
+/*********************************
+/ THIS FILE IS USED FOR BOTH
+/   bloodPressure.ejs
+/         AND
+/   bloodPressureResults.ejs 
+/*********************************/
+
 .instructions, .info, .tableArea
 {
     margin-left: 10%;
@@ -38,6 +45,14 @@ h2
     background-color: rgba(242, 242, 242, 0.288);
 }
 
+#table th
+{
+    padding-left: 3%;
+    background-color: rgba(255, 190, 190, 0.333);
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
 .col1, .col2, .col3, .col4
 {
     width: 35%;
@@ -65,7 +80,7 @@ h2
     margin-bottom: 2%;
 }
 
-#back
+#back, #return
 {
     grid-column: 1;
     padding: 1em;
@@ -74,7 +89,7 @@ h2
     font-size: 1.5em;
 }
 
-#next
+#next, #finish
 {
     grid-column: 7;
     padding: 1em;
