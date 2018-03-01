@@ -79,6 +79,11 @@ var bloodPressureResults = function(req, res) {
 var results = function(req, res, next) {
     res.render('results', {lang: language.controller.getLang});
 };
+
+var warning = function(req, res) {
+    res.render("warning", {text: language.warningText(language.controller.getLang)});
+}
+
 /* =============================
   ROUTES FOR THE SECOND SCREEN
 =============================== */
@@ -142,6 +147,8 @@ module.exports.sendeMail = sendeMail;
 module.exports.bloodPressure = bloodPressure;
 
 module.exports.bloodPressureResults = bloodPressureResults;
+
+module.exports.warning = warning;
 
 // 404 not found
 module.exports.notFound404 = notFound404;

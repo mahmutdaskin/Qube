@@ -1,0 +1,52 @@
+.gridWrapper
+{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 3%;
+    display: grid;
+    height: auto;
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-gap: 1.2em;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 45% 45% 1fr;
+    grid-template-areas:    "image  text"   
+                            "image  text"   
+                            "footer footer"
+}
+
+.imageArea
+{
+    grid-area: image;
+}
+
+.warningText
+{
+    grid-area: text;
+}
+
+.buttonArea
+{
+    /* Needs extra display property to use justify to save from suicidal thoughts */
+    display: flex;
+    grid-area: footer;
+    justify-content: space-between;
+}
+
+.warningText p
+{
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+}
+
+#exit, #continue
+{
+    width: 15%;
+    padding: 1em;
+    border-radius: 15px;
+    margin-right: 0%;
+    text-align: center;
+    font-size: 1.5em;
+}

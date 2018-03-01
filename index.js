@@ -73,6 +73,8 @@ app.get("/bloodPressure", route.bloodPressure);
 
 app.get("/bloodPressureResults", route.bloodPressureResults);
 
+app.get("/warning", route.warning);
+
 app.post('/selectLanguage', route.selectLanguage);
 app.post('/sendeMail', route.sendeMail);
 

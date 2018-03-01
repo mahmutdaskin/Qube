@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<% text %>
+
+<head>
+	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+	<link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/warning.css" rel="stylesheet">
+
+</head>
+
+<body id="grad">
+	<div class="jumbotron">
+        <h1 class="text-center" style="font-size: 5.5em; margin: 20px 0px 20px 0px; color: black;"><%= text.title %></h1>
+	</div>
+
+    <div class="gridWrapper">
+        <div class="imageArea">
+            <img src="/images/warningSign.svg">
+        </div>
+
+        <div class="warningText">
+            <p><%= text.warning1 %></p>
+            <br>
+            <p><%= text.warning2 %></p>
+        </div>
+        
+        <div class="buttonArea">
+            <button id="exit"><%= text.exit %></button>
+            <button id="continue"><%= text.continue %></button>
+        </div>
+    </div>
+
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>   
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/jquery-ui/jquery-ui.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/Metro-UI-CSS-master/build/js/metro.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/warning.js"></script>
+<script>if (window.module) module = window.module;</script>
+</body>
+
+</html>

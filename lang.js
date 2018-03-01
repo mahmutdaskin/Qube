@@ -33,7 +33,8 @@ var fi_basicInfo = {
     male: "Mies",
     female: "Nainen",
     cancel: "Keskeytä",
-    next: "Seuraava"
+    next: "Seuraava",
+    info: "Tämä laatikko kertoo käyttäjälle mahdolliset virhetilanteet. Muista aina tarkistaa, että mittalaite on päällä ja kytkettynä tietokoneeseen."
 };
 
 var en_basicInfo = {
@@ -46,7 +47,8 @@ var en_basicInfo = {
     male: "Male",
     female: "Female",
     cancel: "Cancel",
-    next: "Next"
+    next: "Next",
+    info: "This infobox tells the user of possible errors. Always remember to check that the measurement device is powered on and connected to the PC."
 };
 
 var fi_inprocess = {
@@ -243,6 +245,24 @@ var en_bloodPressureResults = {
     done: "Done"
 }
 
+var fi_warning = {
+    title: "VAROITUS!",
+    warning1: "Mikäli sinulla on sydämentahdistin tai muu kehoon asennettu elektroninen laite, oman turvallisuutesi vuoksi",
+    warning2: "KEHONKOOSTUMUS MITTARIN KÄYTTÖ ON EHDOTTOMASTI KIELLETTY!",
+    exit: "Poistu",
+    continue: "Jatka"
+}
+
+var en_warning = {
+    title: "WARNING!",
+    warning1: "In case you have a pacemaker or other electronic device installed in your body, for your own safety,",
+    warning2: "THE USAGE OF THE BODY COMPOSITION MEASUREMENT DEVICE IS FORBIDDEN!",
+    exit: "Exit",
+    continue: "Continue"
+
+}
+
+
 function menuText(lang) {
     if (lang == 'fi')
         return fi_menu;
@@ -285,7 +305,6 @@ function inprocessPosterText(lang) {
         return en_inProcessPoster;
 }
 
-
 function posterText(lang) {
     if (lang == 'fi')
         return fi_poster;
@@ -318,6 +337,15 @@ function bloodPressureResultsText(lang) {
     }
 }
 
+function warningText(lang) {
+    if (lang == 'fi') {
+        return fi_warning;
+    }
+    else {
+        return en_warning;
+    }
+}
+
 module.exports.controller = controller;
 // TODO results page translations
 //module.exports.results = results;
@@ -330,3 +358,4 @@ module.exports.posterText = posterText;
 module.exports.finishedPosterText = finishedPosterText;
 module.exports.bloodPressureText = bloodPressureText;
 module.exports.bloodPressureResultsText = bloodPressureResultsText;
+module.exports.warningText = warningText;

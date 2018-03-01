@@ -12,7 +12,7 @@ function returnHome()
 
 function bodyComposition()
 {
-    window.location = "http://127.0.0.1:3000/basicInfo";
+    window.location = "http://127.0.0.1:3000/warning";
 }
 
 function bloodPressure() 
