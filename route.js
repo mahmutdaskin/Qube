@@ -88,7 +88,7 @@ var bloodPressureResults = function(req, res) {
 }
 
 var results = function(req, res, next) {
-    res.render('results', {lang: language.controller.getLang});
+    res.render('results', {lang: language.controller.getLang, success: null});
 };
 
 var warning = function(req, res) {
