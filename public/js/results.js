@@ -8,9 +8,11 @@ var language = $('script[src*=results]').attr('data-language');
 
 if (language === 'fi') {
     var descriptions = fiDescriptions;
+    var details = fiDetails;
 } else  // Default to english.
 {
     var descriptions = enDescriptions;
+    var details = enDetails;
 }
 
 var log = fs.readFileSync('public/logs/data.txt', 'utf8');
@@ -58,7 +60,7 @@ for (var index = 0; index < logKey.length; index++) {
 
 var header = ["Da", "TI", "AG", "Hm"];
 var basicResults = ["Wk", "FW", "fW", "mW", "bW", "MI", "IF", "rA", "rB"];
-var extensiveResults = ["Wk", "FW", "fW", "mW", "bW", "MI", "IF", "rA", "rB", "rJ", "MW", "OV", "LP", "wW", "ww", "wI", "wO", "wo"];
+var extensiveResults = ["Wk", "FW", "fW", "mW", "bW", "MI", "IF", "rA", "rB", "MW", "wW", "ww", "wI", "wO", "wo"];
 var limbs = ["FR", "fR", "mR", "FL", "fL", "mL", "Fr", "fr", "mr", "Fl", "fl", "ml", "FT", "fT", "mT"];
 
 
@@ -70,10 +72,11 @@ function addResultsToPage(resultKeys, elementId)
     for (var i = 0; i < resultKeys.length; i++)
     {
         let text = descriptions[resultKeys[i]] + ": " + logPairs[resultKeys[i]];
+        let key = resultKeys[i];
         text = text.replace(/"/g, '');
         newParagraph = document.createElement("p");
         newParagraph.appendChild(document.createTextNode(text));
-        newParagraph.addEventListener("click", function () { showModal(text, "DescAbc"); });
+        newParagraph.addEventListener("click", function () { showModal(text, details[key]); });
         resultArea.appendChild(newParagraph);
         if (i >= basicResults.length && elementId === "extensive")
         {
