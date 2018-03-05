@@ -9,16 +9,18 @@
 	<link href="/Metro-UI-CSS-master/build/css/metro-icons.css" rel="stylesheet">
 </head>
 
+<% text %>
+
 <body id="grad">
 	<div class="jumbotron">
-        <h1 class="text-center" style="font-size: 5.5em; margin: 20px 0px 20px 0px; color: black;">Tulokset</h1>
+        <h1 class="text-center" style="font-size: 5.5em; margin: 20px 0px 20px 0px; color: black;"><%= text.results %></h1>
 	</div>
 	<div class="gridWrapper">
 		<!-- Results are appended into these divs in results.js -->
 		<div class="header2 toEmail" id="resultsHeader">
-			<button id="basicsButton" type="button">Basic</button>
-			<button id="extensivesButton" type="button">Show extensive results</button>
-			<button id="limbsButton" type="button">Raajat</button>
+			<button id="basicsButton" type="button"><%= text.results %></button>
+			<button id="extensivesButton" type="button"><%= text.extensive %></button>
+			<button id="limbsButton" type="button"><%= text.limbs %></button>
 		<!--	Result header is printed here in results.js
 				Data such as date, time and gender -->
 		</div>
@@ -39,8 +41,8 @@
 		<div class="sideMarginRight"></div> <!-- Margin on the right side of results -->
 		
 		<div class="exitArea">
-			<button id="punkkia">Sähköposti</button>
-			<button id="exitButton" type="button" onclick="goHome()">Exit</button>
+			<button id="punkkia"><%= text.sendTo %></button>
+			<button id="exitButton" type="button" onclick="goHome()"><%= text.exit %></button>
 		</div>
 	</div>
 
@@ -53,13 +55,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
         <p class="detail"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= text.close %></button>
       </div>
     </div>
 
@@ -75,18 +77,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title"><%= text.promptEmail %></h4>
       </div>
       <div class="modal-body">
         <!-- EMAIL INPUT -->
 				<form id="email" action="sendEmail" method="POST">
-					<input type="text" name="address" id="address" placeholder="Sähköpostiosoitteesi">
-					<button id="sendEmailButton" type="submit">Sähköposti</button>
+					<input type="text" name="address" id="address" placeholder="<%= text.promptEmail %>">
+					<button id="sendEmailButton" type="submit"><%= text.send %></button>
 					<div class=loader></div> <!-- LOADER ANIMATION -->
 				</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= text.close %></button>
       </div>
     </div>
 
@@ -100,9 +102,9 @@
   <div id="emailInfoModal-content">
     <span id="emailInfoClose">&times;</span>
 		<% if (success === true) { %>
-    	<p>Vitu awesome</p>
+    	<p><%= text.success %></p>
 		<% } else { %>
-			<p>Vittu saatana</p>
+			<p><%= text.failure %></p>
 		<% } %>
   </div>
 

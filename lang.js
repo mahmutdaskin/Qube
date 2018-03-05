@@ -70,14 +70,14 @@ var fi_finishedText = {
 	select: "Valitse jatkotoimenpiteet.",
 	frontpage: "Etusivulle",
 	print: "Tulosta tulokset ja palaa etusivulle."
-}
+};
 
 var en_finishedText = {
 	title: "Welcome to Qube",
 	select: "Select the next action.",
 	frontpage: "Return to front page.",
 	print: "Print the results and return to the front page."
-}
+};
 
 var fi_inProcessPoster = {
     title: "Mittalaitteen ohjeet",
@@ -106,26 +106,26 @@ var en_inProcessPoster = {
 var fi_poster = {
     title: "Tervetuloa Qubeen.",
     prompt: "Ole hyvä ja seuraa kosketusnäytön ohjeita."
-}
+};
 
 var en_poster = {
     title: "Welcome to Qube.",
     prompt: "Please follow the instructions on the touch screen."
-}
+};
 
 
 var fi_finishedPoster = {
 	title: "Tervetuloa Qubeen.",
 	done: "Mittaukset suoritettu.",
 	prompt: "Lisäohjeita kosketusnäytöllä."
-}
+};
 
 
 var en_finishedPoster = {
 	title: "Welcome to Qube.",
 	done: "Measurement complete.",
 	prompt: "Additional instructions on the touch screen."
-}
+};
 
 var fi_bloodPressure = {
     title: "Verenpaineen mittauksen ohjeet",
@@ -140,7 +140,7 @@ var fi_bloodPressure = {
     instr5: "Suorita mittaus painamalla napista. Ole täysin rentona, älä puhu tai liiku mittauksen aikana. Toista mittaus 1-2 minuutin kuluttua ja merkitse molemmat tulokset muistiin.",
     back: "Takaisin",
     next: "Seuraava",
-}
+};
 
 var en_bloodPressure = {
     title: "Instructions for blood pressure measurement",
@@ -155,7 +155,7 @@ var en_bloodPressure = {
     instr5: "Perform the measurement by pressing the button. Be completely relaxed, don’t talk or move during the measurement. Repeat in 1-2 minutes and write down both results.",
     back: "Back",
     next: "Next"
-}
+};
 
 var fi_bloodPressureResults = {
     // Text paragraphs
@@ -199,7 +199,7 @@ var fi_bloodPressureResults = {
     tableC4R7: "Alle 90",
     return: "Edellinen",
     done: "Valmis"
-}
+};
 
 var en_bloodPressureResults = {
     // Text paragraphs
@@ -243,7 +243,7 @@ var en_bloodPressureResults = {
     tableC4R7: "Less than 90",
     return: "Return",
     done: "Done"
-}
+};
 
 var fi_warning = {
     title: "VAROITUS!",
@@ -251,7 +251,7 @@ var fi_warning = {
     warning2: "KEHONKOOSTUMUS MITTARIN KÄYTTÖ ON EHDOTTOMASTI KIELLETTY!",
     exit: "Poistu",
     continue: "Jatka"
-}
+};
 
 var en_warning = {
     title: "WARNING!",
@@ -259,8 +259,35 @@ var en_warning = {
     warning2: "THE USAGE OF THE BODY COMPOSITION MEASUREMENT DEVICE IS FORBIDDEN!",
     exit: "Exit",
     continue: "Continue"
+};
 
-}
+var fi_results = {
+    results: "Tulokset",
+    basic: "Tulokset",
+    extensive: "Lisää tuloksia",
+    limbs: "Raajat",
+    sendTo: "Lähetä tulokset sähköpostiin",
+    exit: "Poistu",
+    close: "Sulje",
+    promptEmail: "Anna sähköpostiosoitteesi",
+    send: "Lähetä",
+    success: "Sähköpostin lähetys onnistui!",
+    failure: "Sähköpostin lähetys epäonnistui."
+};
+
+var en_results = {
+    results: "Results",
+    basic: "Results",
+    extensive: "More results",
+    limbs: "Limbs",
+    sendTo: "Send results to e-mail",
+    exit: "Exit",
+    close: "Close",
+    promptEmail: "Please input your e-mail address",
+    send: "Send",
+    success: "E-mail sent successfully!",
+    failure: "Failed to send the e-mail."
+};
 
 
 function menuText(lang) {
@@ -346,9 +373,16 @@ function warningText(lang) {
     }
 }
 
+function resultsText(lang) {
+    if (lang =="fi") {
+        return fi_results;
+    } else {
+        return en_results;
+    }
+}
+
 module.exports.controller = controller;
-// TODO results page translations
-//module.exports.results = results;
+module.exports.resultsText = resultsText;
 module.exports.menuText = menuText;
 module.exports.basicInfoText = basicInfoText;
 module.exports.inprocessText = inprocessText;

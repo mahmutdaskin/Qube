@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 /* START PAGE */
 var home = function(req, res, next) {
     res.render('home');
-    //res.render('results', {lang: language.controller.getLang, success: null});
+    //res.render('results', {lang: language.controller.getLang, success: null, text: language.resultsText(language.resultsText(language.controller.getLang))});
     //res.render('menu', {text: language.selectText(language.controller.getLang)});
 };
 
@@ -56,7 +56,7 @@ var sendeMail = function(req, res) {
             return console.log(error);
         }
         console.log("Message sent: %s", info.messageId);
-        res.render('results', {lang: language.controller.getLang, success: success});
+        res.render('results', {lang: language.controller.getLang, success: success, text: language.resultsText(language.controller.getLang)});
     });
 }
 
@@ -88,7 +88,7 @@ var bloodPressureResults = function(req, res) {
 }
 
 var results = function(req, res, next) {
-    res.render('results', {lang: language.controller.getLang, success: null});
+    res.render('results', {lang: language.controller.getLang, success: null, text: language.resultsText(language.controller.getLang)});
 };
 
 var warning = function(req, res) {
