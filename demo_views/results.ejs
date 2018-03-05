@@ -25,7 +25,7 @@
 		
 		<div class="sideMarginLeft"></div>	<!-- Margin on the left side of results -->
 		
-			<div id="results" class="toEmail">
+			<div id="results"> <!-- Extensive contains basic results too so this does not need class="toEmail" -->
 					<!-- Do not add any elements in here manually
 							All elements are cleared when the results are printed -->		
 			</div>
@@ -39,9 +39,7 @@
 		<div class="sideMarginRight"></div> <!-- Margin on the right side of results -->
 		
 		<div class="exitArea">
-			<form id="email" action="sendEmail" method="POST">
-				<button type="submit">Sähköposti</button>
-			</form>
+			<button id="punkkia">Sähköposti</button>
 			<button id="exitButton" type="button" onclick="goHome()">Exit</button>
 		</div>
 	</div>
@@ -68,6 +66,49 @@
   </div>
 </div>
 <!-- Modal definition end -->
+
+<!-- Email address input modal -->
+<div id="emailModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <!-- EMAIL INPUT -->
+				<form id="email" action="sendEmail" method="POST">
+					<input type="text" name="address" id="address" placeholder="Sähköpostiosoitteesi">
+					<button id="sendEmailButton" type="submit">Sähköposti</button>
+					<div class=loader></div> <!-- LOADER ANIMATION -->
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Email sent / fail info modal -->
+<!-- Not a bootstrap modal because vittu mä vihaan bootstrapia -->
+<div id="emailInfoModal" <% if (success === true || success == false) {%> style="display:block" <%} %>> <!-- Show if success variable exists -->
+  <!-- Modal content -->
+  <div id="emailInfoModal-content">
+    <span id="emailInfoClose">&times;</span>
+		<% if (success === true) { %>
+    	<p>Vitu awesome</p>
+		<% } else { %>
+			<p>Vittu saatana</p>
+		<% } %>
+  </div>
+
+</div>
+
+
 
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 

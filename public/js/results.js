@@ -73,7 +73,7 @@ function addResultsToPage(resultKeys, elementId)
         text = text.replace(/"/g, '');
         newParagraph = document.createElement("p");
         newParagraph.appendChild(document.createTextNode(text));
-        newParagraph.addEventListener("click", function () { showModal(text, "Description"); });
+        newParagraph.addEventListener("click", function () { showModal(text, "DescAbc"); });
         resultArea.appendChild(newParagraph);
         if (i >= basicResults.length && elementId === "extensive")
         {
@@ -123,6 +123,8 @@ $("#extensivesButton").on("click", function() {
 */
 var sendEmailForm = $("#email");
 sendEmailForm.submit(function () {
+    $(".loader").css("display", "inline-block");
+    $("#sendEmailButton").attr("disabled", true);
     // Empty the form before filling.
     $("#email input[type='hidden']").remove();
     var i = 0;
@@ -149,3 +151,27 @@ function showModal(title, description) {
     $("#myModal .modal-body").html(description)
     $("#myModal").modal();
 }
+
+function showEmailModal() {
+    $("#emailModal").modal();
+}
+
+$("#punkkia").on("click", function() {
+    showEmailModal();
+});
+
+// Custom modal functions because could not figure out how to display bs modal on load if condition is met.
+var emailInfoModal = document.getElementById("emailInfoModal");
+var emailInfoClose = document.getElementById("emailInfoClose");
+
+// When the user clicks on <span> (x), close the modal
+emailInfoClose.onclick = function() {
+    emailInfoModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target === emailInfoModal) {
+        emailInfoModal.style.display = "none";
+    }
+} 
