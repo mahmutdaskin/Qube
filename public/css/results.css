@@ -75,16 +75,21 @@
     grid-row: 3 / 4;
 }
 
-#exitButton
+#exitButton, #punkkia
 {
     display: inline-block;
     padding: 3%;
     border-radius: 15px;
     text-align: center;
-    width: 50%;
+    width: 70%;
     margin-left: 10%;
     font-size: 1.2em;
 }
+
+#exitButton {
+    margin-top: 40px;
+}
+
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
