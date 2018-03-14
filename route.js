@@ -12,6 +12,12 @@ var home = function(req, res, next) {
     //res.render('menu', {text: language.selectText(language.controller.getLang)});
 };
 
+/**
+ * Function to send the results to an email.
+ * POST when send email button in result page is clicked.
+ * @param {*} req 
+ * @param {*} res 
+ */
 var sendeMail = function(req, res) {
     console.log("Vitu awesome");
     // TODO Secure sender credentials.
@@ -60,6 +66,11 @@ var sendeMail = function(req, res) {
     });
 }
 
+/**
+ * POST from language select page. Sets the language to english or finnish.
+ * @param {*} req 
+ * @param {*} res 
+ */
 var selectLanguage = function(req, res) {
     language.controller.setLang = req.body.language;
     res.render('menu', {text: language.menuText(language.controller.getLang)});
