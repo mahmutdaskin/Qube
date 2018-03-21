@@ -159,8 +159,11 @@ function showEmailModal() {
     $("#emailModal").modal();
 }
 
+
 $("#punkkia").on("click", function() {
-    showEmailModal();
+    //showEmailModal(); Use it to send to printer instead, modal is commented out
+    console.log("xxx");
+    $("#email").submit();
 });
 
 // Custom modal functions because could not figure out how to display bs modal on load if condition is met.

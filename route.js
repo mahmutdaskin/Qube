@@ -4,6 +4,8 @@
 
 var language = require('./lang.js');
 const nodemailer = require('nodemailer');
+var fs = require("fs");
+var exec = require('child_process').exec;
 
 /* START PAGE */
 var home = function(req, res, next) {
@@ -14,18 +16,36 @@ var home = function(req, res, next) {
 
 var sendeMail = function(req, res) {
     console.log("Vitu awesome");
-    // TODO Secure sender credentials.
     // SOMEBODY TOUCHA MY SPAGHETT
     var formContent = req.body;
-    var toAddress = formContent["address"];
-    delete formContent["address"];
 
-    // Default to english
-    var subject = language.controller.getLang === 'fi' ? 'Qube Mittaustuloksesi' : 'Your Qube measurement results';
 
     var emailContent = Object.values(formContent).join("\n");
+    var resultFileName = "results.txt";
+    fs.writeFile(resultFileName, emailContent, (error) => {
+        let success = true;
+        if (error) {
+            success = false;
+            res.render('results', {lang: language.controller.getLang, success: success});
+            return console.log(error);
+        }
+        // Execute lpr - Send the resultfile to the default printer.
+        exec("lpr " + resultFileName, (err, stdout, stderr) => {
+            if (err) {
+                success = false;
+                console.error(err);
+                return;
+            }
+            console.log(stdout);
+        });
+        res.render('results', {lang: language.controller.getLang, success: success, text: language.resultsText(language.controller.getLang)});
+    });
     
-    var transport = nodemailer.createTransport({
+    //var toAddress = formContent["address"];
+    //delete formContent["address"];
+    // Default to english
+    //var subject = language.controller.getLang === 'fi' ? 'Qube Mittaustuloksesi' : 'Your Qube measurement results';
+    /*var transport = nodemailer.createTransport({
         host: "smtp.office365.com",
         port: 587,
         secure: false, // False for TLS.
@@ -57,7 +77,7 @@ var sendeMail = function(req, res) {
         }
         console.log("Message sent: %s", info.messageId);
         res.render('results', {lang: language.controller.getLang, success: success, text: language.resultsText(language.controller.getLang)});
-    });
+    });*/
 }
 
 var selectLanguage = function(req, res) {

@@ -41,10 +41,14 @@
 		<div class="sideMarginRight"></div> <!-- Margin on the right side of results -->
 		
 		<div class="exitArea">
-			<button id="punkkia"><%= text.sendTo %></button>
+			<form id="email" action="sendEmail" method="POST"> <!-- Add hidden inputs in js side. Inputs contain the results to print. -->
+			</form>			
+			<button id="punkkia" type=submit ><%= text.sendTo %></button>
 			<button id="exitButton" type="button" onclick="goHome()"><%= text.exit %></button>
 		</div>
 	</div>
+
+
 
 
 <!-- Modal definition start -->
@@ -70,21 +74,22 @@
 <!-- Modal definition end -->
 
 <!-- Email address input modal -->
+<!--
 <div id="emailModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= text.promptEmail %></h4>
       </div>
       <div class="modal-body">
-        <!-- EMAIL INPUT -->
+
 				<form id="email" action="sendEmail" method="POST">
 					<input type="text" name="address" id="address" placeholder="<%= text.promptEmail %>">
 					<button id="sendEmailButton" type="submit"><%= text.send %></button>
-					<div class=loader></div> <!-- LOADER ANIMATION -->
+					<div class=loader></div> 
 				</form>
       </div>
       <div class="modal-footer">
@@ -94,6 +99,7 @@
 
   </div>
 </div>
+-->
 
 <!-- Email sent / fail info modal -->
 <!-- Not a bootstrap modal because vittu mä vihaan bootstrapia -->

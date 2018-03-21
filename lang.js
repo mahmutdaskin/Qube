@@ -266,13 +266,13 @@ var fi_results = {
     basic: "Tulokset",
     extensive: "Lisää tuloksia",
     limbs: "Raajat",
-    sendTo: "Lähetä tulokset sähköpostiin",
+    sendTo: "Tulosta tulokset",
     exit: "Poistu",
     close: "Sulje",
-    promptEmail: "Anna sähköpostiosoitteesi",
-    send: "Lähetä",
-    success: "Sähköpostin lähetys onnistui!",
-    failure: "Sähköpostin lähetys epäonnistui."
+    //promptEmail: "Anna sähköpostiosoitteesi",
+    send: "Tulosta",
+    success: "Tulostus aloitettu!",
+    failure: "Tulostus epäonnistui"
 };
 
 var en_results = {
@@ -280,13 +280,13 @@ var en_results = {
     basic: "Results",
     extensive: "More results",
     limbs: "Limbs",
-    sendTo: "Send results to e-mail",
+    sendTo: "Print the results",
     exit: "Exit",
     close: "Close",
-    promptEmail: "Please input your e-mail address",
-    send: "Send",
-    success: "E-mail sent successfully!",
-    failure: "Failed to send the e-mail."
+    //promptEmail: "Please input your e-mail address",
+    send: "Tulosta",
+    success: "Print started!",
+    failure: "Print failed."
 };
 
 

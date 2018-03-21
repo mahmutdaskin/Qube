@@ -13,6 +13,7 @@ restartPutty();
 
 // Get the info box element
 var infoBox = document.getElementById("infoBox");
+infoBox.style.display = "none";
 
 // clicking Seuraava executes a function:
 $('#sendData').on('click', sendData);
