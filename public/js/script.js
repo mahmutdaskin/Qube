@@ -1,3 +1,13 @@
+/****************************
+ * 
+ * Brought to you by NTIVIS14 and used in the original project!
+ * 
+ * It should not be in use anywhere in the project anymore, 
+ * but it's just too hilarious to be deleted
+ * 
+ * 
+ ****************************/
+
 $('label.btn').on('change', changeColor);
 $('.selectAll').on('click', deselectAll);
 
@@ -43,6 +53,10 @@ function changeColor() {
 			}
 		};
 	}
+
+
+		// This is absolute gold :---DDD   
+		// - Joonas PTIVIS15H
 
   // user must choose Weight and Height when choosing Body Composition:
   if (deviceButtons[2].style.backgroundColor === 'rgb(21, 68, 64)') {

@@ -1,3 +1,12 @@
+/**
+ * Contains a controller to get and set the language in use.
+ * Contains texts to be rendered to the ejs files and
+ * the functions to get the texts according to the language in use.
+ */
+
+/** 
+ * Variable to get and set the language in use.
+*/
 var controller = {
     lang: 'en',
     get getLang() {

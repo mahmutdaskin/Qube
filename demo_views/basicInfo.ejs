@@ -1,11 +1,21 @@
+<!-- --------------------------------
+All texts on the pages are queried from LANG.JS file
+depending on which language is chosen in the beginning
+
+This file is originally from NTIVIS14 group and has been
+changed very little. (Re)Move bootstraps, Metro-UIs etc.
+with caution. 
+
+This page is shown on main screen for 
+body composition measurement inputs before the measurement
+--------------------------------- -->
+
 <!DOCTYPE html>
 <html>
 
 <% text %>
 
 <head>
-	<!--
-	<title><%= text.title %> </title> -->
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -35,9 +45,6 @@
 			<span class="input-state-success mif-checkmark"></span>
 		</div>
 		<div data-role="group" data-group-type="one-state" class="gender">
-		<!--	<input type="button" class="button" value=<%= text.male %> />
-			<input type="button" class="button" value=<%= text.female %> />
-		-->
 			<!-- Don't change the id. It's used to lookup the selection -->
 			<input type="button" class="button" id="male" value=<%= text.male %> />
 			<input type="button" class="button" id="female" value=<%= text.female %> />

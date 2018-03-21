@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<!-- --------------------------------
+All texts on the pages are queried from LANG.JS file
+depending on which language is chosen in the beginning
+
+Bootstrap is used in the jumbotron
+Shares a common CSS-file with bloodPressureResults.ejs
+
+This page is shown on main screen when the user selects
+blood pressure from the menu
+--------------------------------- -->
+
 <html>
 
 <% text %>
@@ -30,19 +42,23 @@
         </ol>
     </div>
 
+    <!-- FOOTER -->
     <div class="führer">
         <button id="back"><%= text.back %></button>
         <button id="next"><%= text.next %></button>
     </div>
 
+<!-- This bunch is copy-paste that is from the original NTIVIS14 group's files
+    No idea if everything is used but the pages don't work without... -->
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>   
 <script src="/jquery/dist/jquery.min.js"></script>
 <script src="/jquery-ui/jquery-ui.min.js"></script>
 <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/Metro-UI-CSS-master/build/js/metro.js"></script>
+<script>if (window.module) module = window.module;</script>
+
 <script src="/js/script.js"></script>
 <script src="/js/bloodPressure.js"></script>
-<script>if (window.module) module = window.module;</script>
 </body>
 
 </html>

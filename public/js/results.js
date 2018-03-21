@@ -58,12 +58,21 @@ for (var index = 0; index < logKey.length; index++) {
     logPairs[logKey[index]] = logVal[index];
 }
 
+/* 
+ * Declare the results to be shown.
+ * Key - Result can be found in fi_descriptions.js and en_descriptions.js
+*/
 var header = ["Da", "TI", "AG", "Hm"];
 var basicResults = ["Wk", "FW", "fW", "mW", "bW", "MI", "IF", "rA", "rB"];
 var extensiveResults = ["Wk", "FW", "fW", "mW", "bW", "MI", "IF", "rA", "rB", "MW", "wW", "ww", "wI", "wO", "wo"];
 var limbs = ["FR", "fR", "mR", "FL", "fL", "mL", "Fr", "fr", "mr", "Fl", "fl", "ml", "FT", "fT", "mT"];
 
-
+/**
+ * Adds the results to the page.
+ * 
+ * @param {array} resultKeys The keys of values to show.
+ * @param {string} elementId The html element where to add the results. 
+ */
 function addResultsToPage(resultKeys, elementId) 
 {
     var newParagraph;
@@ -85,11 +94,19 @@ function addResultsToPage(resultKeys, elementId)
     }
 }
 
+/**
+ * Hide an element
+ * @param {string} divId The id of the element to hide.
+ */
 function hide(divId) {
     var div = document.getElementById(divId);
     div.style.display = "none";
 }
 
+/**
+ * Display an element
+ * @param {string} divId The id of the element to display. 
+ */
 function show(divId) {
     var div = document.getElementById(divId);
     div.style.display = "";
@@ -102,6 +119,8 @@ addResultsToPage(limbs, "limbs");
 // Show only basic on load
 hide("limbs");
 hide("extensive");
+
+// Add listeners to buttons.
 
 $("#basicsButton").on("click", function() {
     hide("limbs");
@@ -122,7 +141,7 @@ $("#extensivesButton").on("click", function() {
 
 /* 
     Set hidden inputs to the send email form.
-    Gets the values from the results shown on the page.
+    Collect values from elements with class toEmail
 */
 var sendEmailForm = $("#email");
 sendEmailForm.submit(function () {
