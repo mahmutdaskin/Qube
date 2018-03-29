@@ -67,7 +67,6 @@ var fi_inprocess = {
 
 };
 
-
 var en_inprocess = {
     title: "Measurement in progress...",
     instructions: "Instructions on the next screen.",
@@ -122,13 +121,11 @@ var en_poster = {
     prompt: "Please follow the instructions on the touch screen."
 };
 
-
 var fi_finishedPoster = {
 	title: "Tervetuloa Qubeen.",
 	done: "Mittaukset suoritettu.",
 	prompt: "Lisäohjeita kosketusnäytöllä."
 };
-
 
 var en_finishedPoster = {
 	title: "Welcome to Qube.",
@@ -298,6 +295,8 @@ var en_results = {
     failure: "Print failed."
 };
 
+
+// These functions return the right variables to the pages depending on the language
 
 function menuText(lang) {
     if (lang == 'fi')

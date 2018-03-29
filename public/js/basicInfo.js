@@ -37,11 +37,20 @@ function sendData() {
     if ((age > 4 && age < 99) && (height > 89 && height < 249) && (gender === 1 || gender === 2)) {
         var allDone = false;
 
-        /////////////////////////////
-        //
-        // 	SEND COMMANDS TO TANITA
-        //
-        /////////////////////////////
+        /**********************************************************
+         * 
+         *  SEND COMMANDS TO TANITA:
+         * 
+         *  M1 = set Tanita to PC mode
+         *  D2 = Set body type, D20: Normal, D21: athletic -- Practically always use D20
+         *  D0 = Clothes weigth, D001.5 = 1,5kg
+         *  D1 = Gender, D11 male, D12 female
+         *  D4 = Age, D420 --> 20 years old
+         *  D3 = Height, D3180 --> 180cm
+         *  G = Start measuring
+         *  Q = Reset all variables on the device
+         * 
+         *********************************************************/
 
         exec("echo 'M1\n' > /dev/ttyUSB0", function (error, stdout, stderr) { });		// Extra exec to "wake up" the machine to respond to next execs
 
