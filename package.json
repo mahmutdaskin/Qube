@@ -1,10 +1,10 @@
 {
   "name": "qube",
-  "version": "0.5.0",
-  "description": "MITÄ VITTUA SÄ HALUAT??",
+  "version": "1.0.0",
+  "description": "Measuring Quuuuuuuuuube",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron index.js"
   },
   "author": "Maria Parshina, Joonas Aaltonen, Atte Laakso",
   "license": "ISC",
